@@ -2,9 +2,12 @@ import Card from "./Card";
 import Search from "./Search";
 import Category from "./Category";
 import { manageData } from "./Data";
+import DataDevided from "./DataDevided";
+// import VisiblePost from "@/components/product/VisiblePost";
 
 const Product = async ({ searchParams }) => {
   // fetch and manage data
+
   const data = await manageData(searchParams);
 
   return (
@@ -13,9 +16,11 @@ const Product = async ({ searchParams }) => {
 
       <div className="containar w-[100%] flex gap-[5px] mt-[20px]">
         <div className="left w-[80%] h-auto flex  flex-wrap justify-center gap-[15px] ">
-          {data.map((item) => (
-            <Card key={item.id} item={item} />
-          ))}
+          {/* {data.map((item)=>{
+  return <Card key={item.id} item={item}/>
+})} */}
+
+          <DataDevided data={data} />
         </div>
 
         <div className=" w-[20%] h-[200px] flex justify-start cursor-pointer ">

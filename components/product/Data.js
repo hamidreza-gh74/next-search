@@ -8,7 +8,7 @@ export const manageData = async (searchParams) => {
 
   if (search != "") {
     // const newData = data?.filter((item) => item.category == search);
-    const newData = data?.filter((item) => item.category.startsWith(search));
+    const newData = data?.filter((item) => item.title.startsWith(search.toUpperCase()));
 
     return newData;
   }

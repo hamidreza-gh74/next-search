@@ -1,8 +1,6 @@
 "use client";
-import { useState } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+const Counter = ({ count, setCount }) => {
   return (
     <div className=" flex  items-center gap-[8px]">
       <button
@@ -15,8 +13,7 @@ const Counter = () => {
 
       <button
         className="w-[18px]  h-[18px] rounded-[4px] bg-[red] flex justify-center items-center text-[white] text-[14px]"
-        onClick={() => setCount((prev) => prev - 1)}
-        disabled={count<1 ? true : false}
+        onClick={count > 1 ? () => setCount((prev) => prev - 1) : null}
       >
         -
       </button>

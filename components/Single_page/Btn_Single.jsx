@@ -1,26 +1,21 @@
 "use client";
 
-import { decrement, increment } from "@/Redux/Slices/cartSlice";
-import { useDispatch } from "react-redux";
-
-const Btn = ({ item }) => {
-  const dispatch = useDispatch();
-
+const Btn_Single = ({ counter, setCounter }) => {
   return (
     <div className="btn flex  w-[75px] h-[30px] bg-[#c7c2c2] rounded-[5px] ">
       <div
         className="pos w-[25px] h-[inherit]  flex justify-center items-center cursor-pointer"
-        onClick={() => dispatch(increment(item.id))}
+        onClick={() => setCounter((prev) => prev + 1)}
       >
         +
       </div>
 
       <div className="quy w-[25px] h-[inherit] flex justify-center items-center ">
-        {item.qty}
+        {counter}
       </div>
       <div
         className="neg w-[25px] h-[inherit] flex justify-center items-center cursor-pointer"
-        onClick={item.qty > 1 ? () => dispatch(decrement(item.id)) : null}
+        onClick={counter > 1 ? () => setCounter((prev) => prev - 1) : null}
       >
         -
       </div>
@@ -28,4 +23,4 @@ const Btn = ({ item }) => {
   );
 };
 
-export default Btn;
+export default Btn_Single;

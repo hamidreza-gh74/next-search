@@ -1,4 +1,5 @@
 import Rating_MUI from "../helper_com/Rating_MUI";
+import Cart_Manage from "./Cart_Manage";
 
 const Single_page = ({ data }) => {
   return (
@@ -25,6 +26,10 @@ const Single_page = ({ data }) => {
 
         <div className="description w-[80%] text-[12px] leading-[20px] text-justify">
           {data.description}
+        </div>
+
+        <div className="cart w-fit">
+          <Cart_Manage data={data} />
         </div>
 
         <div className="last mt-[10px] w-[90%] flex justify-between capitalize text-[12px] font-[500] pb-[10px]">

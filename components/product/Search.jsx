@@ -10,7 +10,6 @@ const Search = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchparam = useSearchParams();
-  console.log(searchparam);
 
   useEffect(() => {
     if (searchparam.has("search")) {

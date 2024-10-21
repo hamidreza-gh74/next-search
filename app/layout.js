@@ -1,6 +1,9 @@
 import Header from "@/components/Header/Header";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
+import Providers from "@/Redux/Provider";
+import ToastContainer from "@/libraries/ToastifyClient";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: "Home Page",
@@ -11,11 +14,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
+        <Providers>
+          <Header />
 
-        {children}
+          {children}
 
-        <Footer />
+          <Footer />
+          <ToastContainer />
+        </Providers>
       </body>
     </html>
   );
