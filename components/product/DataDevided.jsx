@@ -20,7 +20,7 @@ const DataDevided = ({ data }) => {
 
   useEffect(() => {
     setVisiblePost(data.slice(0, itemsToShow));
-  }, [itemsToShow]);
+  }, [itemsToShow ,data]);
 
   useEffect(() => {
     if (visiblePost.length < data.length && inView) {
